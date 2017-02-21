@@ -1,0 +1,50 @@
+#home
+{
+    background:#303030 !important;
+}
+
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+.result_form_user
+{
+    width: 600px;
+    height: 350px;
+    margin-top: 80px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.result_form_user h1
+{
+    font-size: 25px;
+    border-bottom: 4px solid #ffffff;
+}
+
+#th_accueil_chef
+{
+    padding-top: 20px;
+}
+
+#tablatest
+{
+    border: 1px solid #ffffff;
+}
+
+td, th
+{
+    padding: 5px 5px 5px 5xp; !important
+}
+
+.corps_principal_top
+{
+    background-color: ;
+    height: auto; 
+    width: auto;
+    padding : 5px 5px 5px 5px;
+}
