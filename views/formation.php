@@ -1,3 +1,7 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <?php
  if (isset($_SESSION['connecte'])){
 ?>
@@ -8,47 +12,50 @@
 					<div class="col-md-12">
     					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">CHERCHEZ UNE <span>FORMATION</span></h2>
     				</div>
-                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.6s">
-                        <div class="media">
-                            <div class="media-heading-wrapper">
-                                <div class="media-object pull-left">
-                                    <i class="fa fa-mobile"></i>
-                                </div>
-                                <h3 class="media-heading">FORMATION 1</h3>
+				</div>
+				<div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#formation1" class="portfolio-link" data-toggle="modal">
+                        <div class="formation-hover">
+                            <div class="formation-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
                             </div>
-                            <div class="media-body">
-                                <p>Ce site permet la réservation en ligne <a rel="nofollow" href="http://www.google.com" target="_parent">Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis subito visus: eosque ut heiulans baiolorum praecentor ad expediendum quod orsi sunt incitans vocibus crebris. qui haut longe postea ideo vivus exustus est.
+                        </div>
+                        <img src="images/html_css.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="formation_desc">
+                        <h4>Parking</h4>
+                        <p class="text-muted">Gestion de parking</p>
+                    </div>
+                </div>
+                </div>
+			</div>
+			
+			<!-- formation 1 -->
+			<div class="formation-modal modal fade" id="formation1" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-dismiss="modal">
+                            <div class="lr">
+                                <div class="rl">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="modal-body">
+                                        <!-- Project Details Go Here -->
+                                        <h1>COUCOU</h1>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Fermer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-					<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-offset="50" data-wow-delay="0.9s">
-						<div class="media">
-							<div class="media-heading-wrapper">
-								<div class="media-object pull-left">
-									<i class="fa fa-car"></i>
-								</div>
-								<h3 class="media-heading">FORMATION 2</h3>
-							</div>
-							<div class="media-body">
-								<p>En accord avec <a rel="nofollow" href="http://www.google.com">Parkcar</a> Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis subito visus: eosque ut heiulans baiolorum praecentor ad expediendum quod orsi sunt incitans vocibus crebris. qui haut longe postea ideo vivus exustus est.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
-						<div class="media">
-							<div class="media-heading-wrapper">
-								<div class="media-object pull-left">
-									<i class="fa fa-html5"></i>
-								</div>
-								<h3 class="media-heading">FORMATION 3</h3>
-							</div>
-							<div class="media-body">
-								<p>Afin d'obtenir un compte sur <a rel="nofollow" href="http://www.google.com">Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis subito visus: eosque ut heiulans baiolorum praecentor ad expediendum quod orsi sunt incitans vocibus crebris. qui haut longe postea ideo vivus exustus est.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+                </div>
+    </div>
     </body>
 <?php }
  ?>
+</html>

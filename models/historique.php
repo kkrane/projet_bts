@@ -9,7 +9,7 @@ require_once 'models/connexion.php';
 
 function getHistorique()
 {
-$bdd = getConnexion();
+$bdd = $GLOBALS['bdd'];
 $sql = "SELECT * FROM formation";
 $req = $bdd->query($sql);
 

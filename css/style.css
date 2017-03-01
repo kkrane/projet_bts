@@ -48,3 +48,59 @@ td, th
     width: auto;
     padding : 5px 5px 5px 5px;
 }
+
+.formation-hover {
+  background: rgba(254, 209, 54, 0.9);
+  position: absolute;
+  width: 92.5%;
+  height: 100%;
+  opacity: 0;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+}
+
+.formation-hover:hover {
+  opacity: 1;
+}
+
+.formation-hover .formation-hover-content {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  top: 50%;
+  margin-top: -12px;
+  color: white;
+}
+
+.formation_desc {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff9f9;
+  text-align: center;
+  padding: 25px;
+}
+
+h4
+{
+    color: #5a5959;
+}
+
+.modal-content
+{
+    background-color: rgba(87, 87, 86, 0.9);
+    border-radius: 0;
+    background-clip: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    min-height: 100%;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.modal-body {
+    position: relative;
+}

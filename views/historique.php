@@ -15,7 +15,7 @@
                     <div class="row">
     				<div id="th_historique">
                     
-			        <div class="col-md-offset-2">
+			        <div class="col-md-offset-3">
                         <table cellpadding="10px" cellspacing="0" border="0" width="60%"; >
 
                             <tr id="tablatest">
@@ -39,16 +39,17 @@
                         {
                     ?>
                         <div class="col-md-offset-2">
-                         
-                         <td style="text-align : center;" scope="col" name="titre" id="titre"><?php echo $donnee['titre'];?></td>
-                         <td style="text-align : center;" scope="col" name="titre" id="titre"><?php echo $donnee['date_debut'];?></td>
-                         <td style="text-align : center;" scope="col" name="titre" id="titre"><?php echo $donnee['cout'];?></td>
-                         </table>
+                         <tr>
+                             <td style="text-align : center;" scope="col" name="titre" id="titre"><?php echo $donnee['titre'];?></td>
+                             <td style="text-align : center;" scope="col" name="titre" id="titre"><?php echo $donnee['date_debut'];?></td>
+                             <td style="text-align : center;" scope="col" name="titre" id="titre"><?php echo $donnee['cout'];?></td>
+                         </tr>
                        </div>
                     </div>
                     <?php
                         }
     				?>
+    				    </table>
     			
     		</div>
         </div>
