@@ -5,7 +5,7 @@
         <body id="top">
             <div class="container">
                 <div class="row">
-                   <h3 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">FORMATION EN ATTENTE</h3>
+                    <h3 style="color: #28a7e9" class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">FORMATION EN ATTENTE</h3>
                     <table class="table">
                       <thead class="thead-inverse">
                         <tr>
@@ -45,7 +45,7 @@
             
             <div class="container">
                 <div class="row">
-                   <h3 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">FORMATION VALIDE</h3>
+                    <h3 style="color: #28a7e9" class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">FORMATION VALIDE</h3>
                     <table class="table">
                       <thead class="thead-inverse">
                         <tr>
@@ -85,7 +85,7 @@
             
             <div class="container">
                 <div class="row">
-                   <h3 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">FORMATION REFUSE</h3>
+                    <h3 style="color: #28a7e9" class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">FORMATION REFUSE</h3>
                     <table class="table">
                       <thead class="thead-inverse">
                         <tr>

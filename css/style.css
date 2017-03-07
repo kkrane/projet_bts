@@ -52,8 +52,8 @@ td, th
 .formation-hover {
   background: rgba(254, 209, 54, 0.9);
   position: absolute;
-  width: 92.5%;
-  height: 100%;
+  width: 92%;
+  height: 49%;
   opacity: 0;
   transition: all ease 0.5s;
   -webkit-transition: all ease 0.5s;
@@ -90,17 +90,17 @@ h4
 
 .modal-content
 {
-    background-color: rgba(87, 87, 86, 0.9);
+    background-color: white;
     border-radius: 0;
     background-clip: border-box;
     -webkit-box-shadow: none;
     box-shadow: none;
     border: none;
     min-height: 100%;
-    padding: 100px 0;
-    text-align: center;
+    padding: 20px 20px 20px 20px;
 }
 
 .modal-body {
     position: relative;
 }
+

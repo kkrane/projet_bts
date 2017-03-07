@@ -9,8 +9,8 @@ require_once 'models/connexion.php';
 function getFormation()
 {
     $bdd = $GLOBALS['bdd'];
-    $sql = "SELECT * FROM formation";
-    $req = $bbd->query($sql);
+    $sql = "SELECT * FROM formation ";
+    $req = $bdd->query($sql);
     
     if(!$req)
     {
