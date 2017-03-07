@@ -19,9 +19,19 @@ if(isset($_POST['submit']))
             $_SESSION['nbr_jour'] = $reponse['nbr_jour'];
             $_SESSION['id_s'] = $reponse['id_s'];
             $_SESSION['chef'] = $reponse['chef'];
+            if($_SESSION['chef'] == 0)
+            {
             header('location:accueil');
+            }
+            if($_SESSION['chef'] == 1)
+                {
+            header('location:accueilChef');
+            }
 			die();
     }
-        else alert: "Login ou Mot de Passe incorrect";  
+        
+    
+        else alert: "Login ou Mot de Passe incorrect";
+
 }
 ?>
