@@ -23,7 +23,6 @@
 		<script src="js/custom.js"></script>
 	</head>
 	<body id="top">
-
 		<!-- start preloader -->
 		<div class="preloader">
 			<div class="sk-spinner sk-spinner-wave">
@@ -37,9 +36,25 @@
     	<!-- end preloader -->
 
         <!-- start header -->
-  <?php
- if (isset($_SESSION['connecte'])){
- ?>
+<?php
+
+try
+{
+	$bdd = new PDO("mysql:host=localhost;dbname=intranet;charset=utf8","root","",
+		array(
+			PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8'
+		));
+}
+catch (Exception $e)
+{
+	echo "Erreur de connection";
+}
+
+
+if (isset($_SESSION['connecte']) == true) {
+	$requete = $bdd->query("SELECT * FROM user WHERE id_s=".$_SESSION['id_s']." ");
+	$get_user = $requete->fetch();
+	?>
             <nav class="navbar navbar-default templatemo-nav" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -56,6 +71,7 @@
                         <li><a href="formation">FORMATION</a></li>
                         <li><a href="historique">HISTORIQUE</a></li>
                         <li><a href="logout">DECONNEXION</a></li>
+                        <li><a href="#"><?= $get_user['credit']; ?><span> Crédits </span></a></li>
                     </ul>
                 </div>
             </div>
