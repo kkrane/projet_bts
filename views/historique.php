@@ -3,52 +3,35 @@
 ?>
 
 <link rel="stylesheet" href="css/style.css">
-	<body id="top">
-    		<div class="container">
-    			<div class="row">
-    				<div class="col-md-offset-3 col-md-10"> <!-- container du titre -->
-    				<h1>Historique de vos formations</h1>
-    				</div>
-                </div>
-            </div>
-                   <div class="container titre">
-                    <div class="row">
-    				<div id="th_historique">
-                    
-			        <div class="col-md-offset-3">
-                        <table cellpadding="10px" cellspacing="0" border="0" width="60%"; >
 
-                            <tr id="tablatest">
-                                <th style="text-align : center;" id="titreform" onclick="#">INTITULE FORMATION</th>
-                                <th style="text-align : center;" id="titredate" onclick="#">DATE DEBUT</th>
-                                <th style="text-align : center;" id="titredate" onclick="#">CREDIT</th>
-                            <tr>
-                        
-                    </div>
-                       
-			        </div>
-                    </div>
-                    </div>
+    <body id="top">
+        <div class="container">
+            <div class="row">
+                <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">HISTORIQUE DE VOS <span>FORMATIONS</span></h2>
+                    <table class="table">
+                      <thead class="thead-inverse">
+                        <tr>
+                          <th>Intitule formation</th>
+                          <th>Dte début</th>
+                          <th>Crédit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+              <?php
+                                    
+                $req = getHistorique();
+                while($donnee = $req->fetch())
+                {
+              ?>
+                        <tr>
+                          <td scope="row"><?php echo $donnee['titre'] ?></td>
+                          <td scope="row"><?php echo $donnee['date_debut'] ?></td>
+                          <td scope="row"><?php echo $donnee['cout'] ?></td>
+                        </tr>
                    
-                   <div class="container titre">
-                   <div class="row"> 
-                   <div id="tableau_historique">
-    				<?php
-                        $req = getHistorique();
-    				    while($donnee = $req->fetch())
-                        {
-                    ?>
-                        <div class="col-md-offset-2">
-                         <tr>
-                             <td style="text-align : center;" scope="col" name="titre" id="titre"><?php echo $donnee['titre'];?></td>
-                             <td style="text-align : center;" scope="col" name="titre" id="titre"><?php echo $donnee['date_debut'];?></td>
-                             <td style="text-align : center;" scope="col" name="titre" id="titre"><?php echo $donnee['cout'];?></td>
-                         </tr>
-                       </div>
-                    </div>
-                    <?php
-                        }
-    				?>
+            <?php
+                }
+            ?>
     				    </table>
     			
     		</div>
