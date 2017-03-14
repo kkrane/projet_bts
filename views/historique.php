@@ -12,7 +12,7 @@
                       <thead class="thead-inverse">
                         <tr>
                           <th>Intitule formation</th>
-                          <th>Dte début</th>
+                          <th>Date début</th>
                           <th>Crédit</th>
                         </tr>
                       </thead>
