@@ -66,7 +66,7 @@
                       <tbody>
 
                <?php
-                $req = getFormationEnAttente();
+                $req = getFormationValide();
                 while($donnee = $req->fetch())
                 {
               ?>
@@ -109,7 +109,7 @@
                       <tbody>
                           
               <?php
-                $req = getFormationEnAttente();
+                $req = getFormationRefuse();
                 while($donnee = $req->fetch())
                 {
               ?>
