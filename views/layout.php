@@ -63,12 +63,25 @@ if (isset($_SESSION['connecte']) == true) {
                         <span class="icon icon-bar"></span>
                         <span class="icon icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand"> <img src="images/logo.png" class="img-responsive" style="width: 170px; height=10px; margin-top: -19px;";> </a>
+                    <a href="accueil" class="navbar-brand"> <img src="images/logo.png" class="img-responsive" style="width: 170px; height=10px; margin-top: -19px;";> </a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="accueil">ACCUEIL</a></li>
-                        <li><a href="formation">FORMATION</a></li>
+                       <?php
+                            if ($_SESSION['chef'] ==1){
+                        ?>
+                        <li><a href="accueil">GESTION DES MEMBRES</a></li>
+                        <?php
+                            }
+                        ?>
+                        <?php
+                            if ($_SESSION['chef'] ==0){
+                        ?>
+                        <li><a href="accueil">MES FORMATIONS</a></li>
+                        <?php
+                            }
+                        ?>
+                        <li><a href="formation">FORMATIONS</a></li>
                         <li><a href="historique">HISTORIQUE</a></li>
                         <li><a href="logout">DECONNEXION</a></li>
                         <li><a href="#"><?= $get_user['credit']; ?><span> Crédits </span></a></li>
@@ -76,7 +89,8 @@ if (isset($_SESSION['connecte']) == true) {
                 </div>
             </div>
         </nav>
-    <?php }
+    <?php
+    }
  ?>
         <div class="class_content">
         <div class="row">

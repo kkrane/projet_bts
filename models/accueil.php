@@ -2,6 +2,24 @@
 
 require_once 'models/connexion.php';
 
+function getListe()
+{
+    $bdd = $GLOBALS['bdd'];
+    $sql = "SELECT * FROM user u WHERE u.id_s";
+    $req = $bdd->query($sql);
+    
+    if(!$req)
+    {
+        echo 'requête déféctueuse';
+    }
+    
+    return $req;
+};
+
+?>
+
+<?php
+require_once 'models/connexion.php';
 function getFormationEnAttente()
 {
     $bdd = $GLOBALS['bdd'];
@@ -15,7 +33,6 @@ function getFormationEnAttente()
     
     return $req;
 };
-
 function getFormationValide()
 {
     $bdd = $GLOBALS['bdd'];
@@ -29,7 +46,6 @@ function getFormationValide()
     
     return $req;
 };
-
 function getFormationRefuse()
 {
     $bdd = $GLOBALS['bdd'];
@@ -43,7 +59,6 @@ function getFormationRefuse()
     
     return $req;
 };
-
 function getFormationDemande()
 {
     $bdd = $GLOBALS['bdd'];
@@ -56,7 +71,6 @@ function getFormationDemande()
     }
     return $req;
 }
-
 function getFormationAccepte2()
 {
     $bdd = $GLOBALS['bdd'];
@@ -69,7 +83,6 @@ function getFormationAccepte2()
     }
     return $req;
 }
-
 function getFormationRefuse2()
 {
     $bdd = $GLOBALS['bdd'];
@@ -82,5 +95,4 @@ function getFormationRefuse2()
     }
     return $req;
 }
-
 ?>

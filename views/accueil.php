@@ -1,7 +1,49 @@
 <?php
  if (isset($_SESSION['connecte'])){
-?>    
+?>
+<link rel="stylesheet" href="css/style.css">    
     <body id="top">
+           <?php
+                if ($_SESSION['chef'] == 1){
+            ?>
+            <div class="container">
+            <div class="row">
+                <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">LISTE DES <span>UTILISATEURS</span></h2>
+                    <table class="table">
+                      <thead class="thead-inverse">
+                        <tr>
+                          <th>Nom</th>
+                          <th>Prénom</th>
+                          <th>Email</th>
+                          <th>Crédits</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+        
+                <?php
+                $req = getListe();
+                while($donnee = $req->fetch())
+                {
+                ?>
+                        <tr>
+                          <td scope="row"><?php echo $donnee['nom'] ?></td>
+                          <td scope="row"><?php echo $donnee['prenom'] ?></td>
+                          <td scope="row"><?php echo $donnee['email'] ?></td>
+                          <td scope="row"><?php echo $donnee['credit'] ?></td>
+                        </tr>
+                        
+        <?php
+                }
+            }
+        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+<?php  
+ }
+?>
+
            <?php
                 if ($_SESSION['chef'] ==0){
             ?>
@@ -253,6 +295,3 @@
                 </div>
             </div>
         </body>
-        <?php
- }
-?>
