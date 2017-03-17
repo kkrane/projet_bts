@@ -63,6 +63,7 @@ if (isset($_SESSION['connecte']) == true) {
                         <span class="icon icon-bar"></span>
                         <span class="icon icon-bar"></span>
                     </button>
+                    <a href="#" class="navbar-brand"> <img src="images/logo.png" class="img-responsive" style="width: 170px; height=10px; margin-top: -19px;";> </a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
