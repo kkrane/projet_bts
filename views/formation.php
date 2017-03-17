@@ -33,7 +33,7 @@
                             <p class="text-muted">Cout de la formation en crédit : <?php echo $donnee['cout']; ?></p>
                             <p class="text-muted">Il reste <?php echo $donnee['nb_place']; ?> places</p>
                             <p class="text-muted">Durée : <?php echo $donnee['duree']; ?> jours</p>
-                            <button type="button" class="btn btn-info">S'inscrire</button>
+                            <button id="bouton_inscription" type="button" class="btn btn-info" onclick="addFormation();">S'inscrire</button>
  
 
                         </div>
