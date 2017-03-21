@@ -89,9 +89,7 @@ if (isset($_SESSION['connecte']) == true) {
                 </div>
             </div>
         </nav>
-    <?php
-    }
- ?>
+
         <div class="class_content">
         <div class="row">
             <?php echo $content;?>
@@ -119,3 +117,6 @@ if (isset($_SESSION['connecte']) == true) {
 
 	</body>
 </html>
+    <?php
+    }
+ ?>

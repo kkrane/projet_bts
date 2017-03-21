@@ -34,7 +34,6 @@
                         
         <?php
                 }
-            }
         ?>
                     </tbody>
                 </table>
@@ -204,13 +203,13 @@
                           <td style="text-align: center;" scope="row"><?php echo $donnee['titre'] ?></td>
                           <td style="text-align: center;" scope="row"><?php echo $donnee['duree'] ?> jours</td>
                           <td style="text-align: center;" scope="row"><img style="width: 20px; height: 20px;" src="images/valider.ico"></img></td>
-                          <td style="text-align: center;" scope="row"><img style="width: 20px; height: 20px; text-align: center;" src="images/refuser.ico"</td>
+                          <td style="text-align: center;" scope="row"><img style="width: 20px; height: 20px; text-align: center;" src="images/refuser.ico"></img></td>
                         </tr>
 
                       
             <?php
                     }
-                
+                }
             ?>
             
      
@@ -286,7 +285,6 @@
                       
             <?php
                     }
-                }
             ?>
             
      
@@ -295,3 +293,7 @@
                 </div>
             </div>
         </body>
+        
+<?php
+    }
+?>

@@ -1,7 +1,7 @@
 <?php
 
 require 'models/connexion.php';
-    
+  
 if(isset($_POST['submit']))
 {
 		$login = $_POST['login'];
@@ -21,9 +21,7 @@ if(isset($_POST['submit']))
             $_SESSION['chef'] = $reponse['chef'];
             header('location:accueil');
 			die();
-    }
-        
-    
+    }  
         else alert: "Login ou Mot de Passe incorrect";
 
 }
