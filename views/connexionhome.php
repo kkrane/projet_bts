@@ -31,12 +31,12 @@
   </head>
 
   <body>
-
+    <div class="insc">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-md-push-4 col-xs-12">
+        <div class="row">
+            <div class="col-md-4 col-md-push-4 col-xs-12">
       <form class="form-signin" method="post">
-        <h2 class="form-signin-heading">Connectez-vous :</h2>
+        <h1 class="form-signin-heading">Connectez-vous :</h1>
         <label for="inputEmail" class="sr-only">Address</label>
         <input name="login" type="text" id="inputEmail" class="form-control" placeholder="Identifiant" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
@@ -52,6 +52,7 @@
     </div> <!-- /container -->
     </div>
     </div>
+      </div>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
