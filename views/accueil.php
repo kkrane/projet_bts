@@ -6,9 +6,7 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
           <script>
               $(document).ready(function(){
-              $(".validation").click(function(e){
-                  e.preventDefault();
-                    var id_formation = $(".id_formation").val(); 
+              $(".validation").click(function(){ 
                     $.ajax({
                         type: "POST",
                         url: "http://localhost/M2L/projetbts/validation",
