@@ -4,7 +4,10 @@ session_start();
 
 	require "models/connexion.php";
 
-	define("BASE_URL",$_SERVER['REQUEST_URI']);
+	function baseUrl()
+    {
+        return 'http://'.$_SERVER['SERVER_NAME'].preg_replace('/index.php$/','', $_SERVER['PHP_SELF']);
+    }
 
 	if(!isset($_GET['p']) || $_GET['p'] == "") 
 	{

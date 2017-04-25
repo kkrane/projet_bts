@@ -3,6 +3,27 @@
 ?>
 <link rel="stylesheet" href="css/style.css">    
     <body id="top">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script>
+              $(document).ready(function(){
+              $(".validation").click(function(e){
+                  e.preventDefault();
+                    var id_formation = $(".id_formation").val(); 
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost/M2L/projetbts/validation",
+                        data: {
+                            id_formation: this.dataset.id,
+                            value: this.value == 'Valider' ? 1 : 0
+                            
+                        }
+                    });
+
+                });
+                });
+            
+              
+          </script>
            <?php
                 if ($_SESSION['chef'] == 1){
             ?>
@@ -178,122 +199,11 @@
         <?php
                 if ($_SESSION['chef'] ==1){
             ?>
-            <div class="container">
-                <div class="row">
-                    <h3 style="color: #28a7e9" class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">Demande en attente</h3>
-                    <table class="table">
-                      <thead class="thead-inverse">
-                        <tr>
-                          <th style="text-align: center;">Salarié</th>
-                          <th style="text-align: center;">Formation</th>
-                          <th style="text-align: center;">Durée</th>
-                          <th style="text-align: center;">Valider</th>
-                          <th style="text-align: center;">Refuser</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                          
-              <?php
-                $req = getFormationDemande();
-                while($donnee = $req->fetch())
-                {
-              ?>
-                        <tr>
-                          <td style="text-align: center;" scope="row"><?php echo $donnee['nom'] ?></td>
-                          <td style="text-align: center;" scope="row"><?php echo $donnee['titre'] ?></td>
-                          <td style="text-align: center;" scope="row"><?php echo $donnee['duree'] ?> jours</td>
-                          <td style="text-align: center;" scope="row"><img style="width: 20px; height: 20px;" src="images/valider.ico"></img></td>
-                          <td style="text-align: center;" scope="row"><img style="width: 20px; height: 20px; text-align: center;" src="images/refuser.ico"></img></td>
-                        </tr>
-
-                      
-            <?php
-                    }
-                }
-            ?>
-            
-     
-                    </tbody>
-                </table>
-                </div>
-            </div>
-            
-            <div class="container">
-                <div class="row">
-                    <h3 style="color: #28a7e9" class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">Demande accepté </h3>
-                    <table class="table">
-                      <thead class="thead-inverse">
-                        <tr>
-                          <th style="text-align: center;">Salarié</th>
-                          <th style="text-align: center;">Formation</th>
-                          <th style="text-align: center;">Durée</th>
-                          <th style="text-align: center;">Annuler</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                          
-              <?php
-                $req = getFormationAccepte2();
-                while($donnee = $req->fetch())
-                {
-              ?>
-                        <tr>
-                          <td style="text-align: center;" scope="row"><?php echo $donnee['nom'] ?></td>
-                          <td style="text-align: center;" scope="row"><?php echo $donnee['titre'] ?></td>
-                          <td style="text-align: center;" scope="row"><?php echo  $donnee['duree'] ?> jours</td>
-                          <td style="text-align: center;" scope="row"><img style="width: 20px; height: 20px; text-align: center;" src="images/refuser.ico"</td>
-                        </tr>
-
-                      
-            <?php
-                    }
-                
-            ?>
-            
-     
-                    </tbody>
-                </table>
-                </div>
-            </div>
-            
-            <div class="container">
-                <div class="row">
-                    <h3 style="color: #28a7e9" class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">Demande refusé</h3>
-                    <table class="table">
-                      <thead class="thead-inverse">
-                        <tr>
-                          <th style="text-align: center;">Salarié</th>
-                          <th style="text-align: center;">Formation</th>
-                          <th style="text-align: center;">Durée</th>
-                          <th style="text-align: center;">Annuler</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                          
-              <?php
-                $req = getFormationRefuse2();
-                while($donnee = $req->fetch())
-                {
-              ?>
-                        <tr>
-                          <td style="text-align: center;" scope="row"><?php echo $donnee['nom'] ?></td>
-                          <td style="text-align: center;" scope="row"><?php echo $donnee['titre'] ?></td>
-                          <td style="text-align: center;" scope="row"><?php echo $donnee['duree'] ?> jours</td>
-                          <td style="text-align: center;" scope="row"><img style="width: 20px; height: 20px; text-align: center;" src="images/refuser.ico"</td>
-                        </tr>
-
-                      
-            <?php
-                    }
-            ?>
-            
-     
-                    </tbody>
-                </table>
-                </div>
-            </div>
+             
         </body>
         
 <?php
     }
+}
+
 ?>

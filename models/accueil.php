@@ -95,4 +95,18 @@ function getFormationRefuse2()
     }
     return $req;
 }
+
+function UpdateDemandeEnAttente()
+{
+    $bdd = $GLOBALS['bdd'];
+    $sql = "UPDATE formation_suivi SET `valide` = 1";
+    $req = $bdd->query($sql);
+    
+    if(!$req)
+    {
+        echo 'requête déféctueuse';
+    }   
+    
+    return $req;
+}
 ?>
