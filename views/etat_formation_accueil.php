@@ -25,8 +25,8 @@
               <td style="text-align: center;" scope="row"><?php echo $donnee['duree'] ?> jours</td>
               <td style="text-align: center;" scope="row">
               <form id="form_update1" method="post">
-                  <input type="submit" class="btn btn-success validation" value= "Valider" data-id="<?= $donnee['id_f'] ?>">
-                  <input type="submit" class="btn btn-danger validation" value = "Refuser" data-id="<?= $donnee['id_f'] ?>">
+                  <input type="submit" class="btn btn-success validation" value= "Valider" data-id="<?= $donnee['id_f'] ?>" data-user="<?= $donnee['id_s'] ?>">
+                  <input type="submit" class="btn btn-danger refuse" value = "Refuser" data-id="<?= $donnee['id_f'] ?>" data-user="<?= $donnee['id_s'] ?>">
               </form>
               </td>
             </tr>
@@ -68,7 +68,9 @@
               <td style="text-align: center;" scope="row"><?php echo $donnee['titre'] ?></td>
               <td style="text-align: center;" scope="row"><?php echo  $donnee['duree'] ?> jours</td>
               <td style="text-align: center;" scope="row">
-              <input id="annuler1" type="submit" class="btn btn-danger" value= "Annuler">
+              <form id="form_update2" method="post">
+                  <input type="submit" class="btn btn-danger annulation" value= "Annuler" data-id="<?php $donnee['id_f']?>">
+              </form>
               </td>
 
             </tr>

@@ -6,19 +6,34 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
           <script>
               $(document).ready(function(){
-              $(".validation").click(function(){ 
+              $(".validation").click(function(){
                     $.ajax({
                         type: "POST",
                         url: "http://localhost/M2L/projetbts/validation",
                         data: {
                             id_formation: this.dataset.id,
-                            value: this.value == 'Valider' ? 1 : 0
+                            id_user: this.dataset.user,
+                            value: this.value == 'Valider',
                             
                         }
                     });
 
                 });
                 });
+              
+              $(document).ready(function(){
+              $(".refuse").click(function(){
+                  $.ajax({
+                      type:"POST",
+                      url: "http://localhost/M2L/projetbts/refuser",
+                      data: {
+                          id_formation: this.dataset.id,
+                          id_user: this.dataset.user,
+                          value: this.value == 'Refuser',
+                      }
+                  });
+              });
+              });
             
               
           </script>
