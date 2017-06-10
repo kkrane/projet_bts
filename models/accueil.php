@@ -23,7 +23,7 @@ require_once 'models/connexion.php';
 function getFormationEnAttente()
 {
     $bdd = $GLOBALS['bdd'];
-    $sql = "SELECT * FROM formation f, formation_suivi fs WHERE f.id_f = fs.id_f AND fs.valide = 0";
+    $sql = "SELECT * FROM formation f, formation_suivi fs WHERE f.id_f = fs.id_f AND fs.valide = 0 AND fs.id_s = '".$_SESSION['id_s']."'";
     $req = $bdd->query($sql);
     
     if(!$req)
@@ -36,7 +36,7 @@ function getFormationEnAttente()
 function getFormationValide()
 {
     $bdd = $GLOBALS['bdd'];
-    $sql = "SELECT * FROM formation f, formation_suivi fs WHERE f.id_f = fs.id_f AND fs.valide = 1";
+    $sql = "SELECT * FROM formation f, formation_suivi fs WHERE f.id_f = fs.id_f AND fs.valide = 1 AND fs.id_s = '".$_SESSION['id_s']."'";
     $req = $bdd->query($sql);
     
     if(!$req)
@@ -49,7 +49,7 @@ function getFormationValide()
 function getFormationRefuse()
 {
     $bdd = $GLOBALS['bdd'];
-    $sql = "SELECT * FROM formation f, formation_suivi fs WHERE f.id_f = fs.id_f AND fs.valide = 2";
+    $sql = "SELECT * FROM formation f, formation_suivi fs WHERE f.id_f = fs.id_f AND fs.valide = 2 AND fs.id_s = '".$_SESSION['id_s']."'";
     $req = $bdd->query($sql);
     
     if(!$req)
