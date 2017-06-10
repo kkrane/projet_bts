@@ -1,4 +1,6 @@
-
+<?php
+if ($_SESSION['chef'] == 1){
+?>
 <div class="result_valide">
 <div class="container">
     <div class="row">
@@ -30,6 +32,7 @@
               </form>
               </td>
             </tr>
+            
 
 
 <?php
@@ -68,8 +71,8 @@
               <td style="text-align: center;" scope="row"><?php echo $donnee['titre'] ?></td>
               <td style="text-align: center;" scope="row"><?php echo  $donnee['duree'] ?> jours</td>
               <td style="text-align: center;" scope="row">
-              <form id="form_update2" method="post">
-                  <input type="submit" class="btn btn-danger annulation" value= "Annuler" data-id="<?php $donnee['id_f']?>">
+              <form id="form_update1" method="post">
+                  <input type="submit" class="btn btn-danger annulation" value= "Annuler" data-id="<?= $donnee['id_f']?>" data_user="<?= $donnee['id_s']?>">
               </form>
               </td>
 
@@ -111,8 +114,8 @@
               <td style="text-align: center;" scope="row"><?php echo $donnee['titre'] ?></td>
               <td style="text-align: center;" scope="row"><?php echo $donnee['duree'] ?> jours</td>
               <td style="text-align: center;" scope="row">
-              <form action="controllers/accueil.php" method="post">
-              <button type="submit" class="btn btn-danger"></button>
+              <form id="form_update1" method="post">
+                  <input type="submit" class="btn btn-danger annulation" value= "Annuler" data-id="<?= $donnee['id_f']?>" data_user="<?= $donnee['id_s']?>">
               </form>
               </td>
             </tr>
@@ -127,3 +130,6 @@
     </table>
     </div>
 </div>
+<?php
+}
+?>
