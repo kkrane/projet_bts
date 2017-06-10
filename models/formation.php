@@ -65,7 +65,7 @@ if(isset($_GET['id_f'])){
 function getFormation()
 {
     $bdd = $GLOBALS['bdd'];
-    $sql = "SELECT * FROM formation";
+    $sql = "SELECT * FROM formation f WHERE NOT EXISTS (SELECT * FROM formation_suivi fs WHERE f.id_f = fs.id_f AND fs.id_s like '".$_SESSION['id_s']."')";
     $req = $bdd->query($sql);
     
     if(!$req)

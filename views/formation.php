@@ -6,6 +6,26 @@
  if (isset($_SESSION['connecte'])){
 ?>
 	<body id="top">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script>
+              
+              $(document).ready(function(){
+              $(".inscription").click(function(){
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost/M2L/projetbts/inscription",
+                        data: {
+                            id_formation: this.dataset.id,
+                            id_user: this.dataset.user,
+                            value: this.value == 'S\'inscrire',
+                            
+                        }
+                    });
+
+                });
+                });
+              
+          </script>
             <div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -31,10 +51,10 @@
                         <div class="formation_desc">       
                             <h4><?php echo $donnee['titre']; ?></h4>
                             <p class="text-muted">Cout de la formation en crédit : <?php echo $donnee['cout']; ?></p>
-                            <p class="text-muted">Il reste <?php echo $donnee['nb_place']; ?> places</p>
                             <p class="text-muted">Durée : <?php echo $donnee['duree']; ?> jours</p>
-                            <button id="bouton_inscription" type="button" class="btn btn-info" onclick="addFormation();">S'inscrire</button>
- 
+                            <form id="form_update1" method="post">
+                                <input type="submit" class="btn btn-info inscription" value="S'inscrire" data-id="<?= $donnee['id_f']?>" data-user="<?= $_SESSION['id_s']?>">
+                            </form>
 
                         </div>
                         </div>
