@@ -45,3 +45,28 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+connexion.php
+views/www/views/logout.php
+views/www/views/layout.php
+views/www/models/logout.php
+views/www/js/wow.min.js
+views/www/js/jquery.singlePageNav.min.js
+*.jpg
+views/www/images/html_css.png
+*.png
+views/www/images/mail.jpeg
+images/controllers/annulation.php
+images/css/style.css
+*.css
+views/www/js/jquery.js
+views/www/js/bootstrap.min.js
+*.js
+views/www/views/historique.php
+views/www/models/historique.php
+images/controllers/logout.php
+images/fonts/fontawesome-webfont.eot
+images/fonts/fontawesome-webfont.svg
+*.ttf
+images/fonts/fontawesome-webfont.woff
+*.otf
+images/fonts/fontawesome-webfont.woff2
