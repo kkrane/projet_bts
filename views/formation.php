@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?= baseUrl(); ?>css/style.css">
 </head>
 <?php
  if (isset($_SESSION['connecte'])){
@@ -17,6 +17,8 @@
                         data: {
                             id_formation: this.dataset.id,
                             id_user: this.dataset.user,
+                            id_cout: this.dataset.cout,
+                            id_jour: this.dataset.jour,
                             value: this.value == 'S\'inscrire',
                             
                         }
@@ -40,22 +42,28 @@
                   {
                 ?>
                         <div style="padding-top: 10px; padding-bottom: 20px;" class="col-md-4 col-sm-6 portfolio-item">
-                        <a href="#formation1" class="portfolio-link" data-toggle="modal">
-                            <div class="formation-hover">
-                                <div class="formation-hover-content">
-                                    <i class="fa fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img style="width: 400px; height: 200px;" src="images/<?php echo $donnee['image']?>" class="img-responsive" alt="">
-                        </a>
-                        <div class="formation_desc">       
+                            <img style="width: 400px; height: 200px;" src="<?= baseUrl();?>images/<?php echo $donnee['image']?>" class="img-responsive" alt="">
+                        
+                        <div class="scrollbar" id="style-1">
+                        <div class="formation_desc force-overflow">       
                             <h4><?php echo $donnee['titre']; ?></h4>
-                            <p class="text-muted">Cout de la formation en crédit : <?php echo $donnee['cout']; ?></p>
-                            <p class="text-muted">Durée : <?php echo $donnee['duree']; ?> jours</p>
+                            <p class="text-muted" align="left"><?php echo $donnee['contenu']; ?></p>
+                            <p class="text-muted" align="left"><b>Cout de la formation en crédit :</b> <?php echo $donnee['cout']; ?></p>
+                            <p class="text-muted" align="left"><b>Durée :</b> <?php echo $donnee['duree']; ?> jours</p>
+                            <p class="text-muted" align="left"><b>Commence le :</b> <?php echo $donnee['date_debut']; ?></p>
+                            <p class="text-muted" align="left"><b>Nombre de place disponible :</b> <?php echo $donnee['nb_place']; ?></p>
+                            <h4>Lieu</h4>
+                            <p class="text-muted" align="left"><?php echo $donnee['num_rue']." ".$donnee['rue'].","; ?></p>
+                            <p class="text-muted" align="left"><?php echo $donnee['ville']." ".$donnee['code_postal']; ?></p>
+                            <h4>Prestataire</h4>
+                            <p class="text-muted" align="left"><?php echo $donnee['raison_sociale'];?></p>
+                            
                             <form id="form_update1" method="post">
-                                <input type="submit" class="btn btn-info inscription" value="S'inscrire" data-id="<?= $donnee['id_f']?>" data-user="<?= $_SESSION['id_s']?>">
+                                <input type="submit" class="btn btn-info inscription" value="S'inscrire" data-id="<?= $donnee['id_f']?>" data-user="<?= $_SESSION['id_s']?>" data-cout="<?= $donnee['cout']?>" data-jour="<?= $donnee['duree']?>">
+                                
                             </form>
 
+                        </div>
                         </div>
                         </div>
                     
@@ -67,6 +75,7 @@
                     
 			        </div>
 			<!-- formation 1 -->
+			
 			<div class="formation-modal modal fade" id="formation1" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -80,6 +89,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="modal-body">
+                                       
                                         <h1 style="color: grey; border-bottom : 4px solid grey; text-align: center;"><?php echo $donnee['titre'] ?></h1>
                                         <h4><?php echo $donnee['contenu'] ?></h4>
                                         <h4><?php echo $donnee['date_debut'] ?></h4>
@@ -87,16 +97,20 @@
                                         <h4><?php echo $donnee['nb_place'] ?></h4>
                                         <h4><?php echo $donnee['cout'] ?></h4>
                                         <h4><?php echo $donnee['lieu'] ?></h4>
+                                        
                                         <button type="button" class="btn btn-info">S'inscrire</button>
                                         
                                         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Fermer</button>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
     </div>
+            
+    
     </body>
 <?php }
  ?>
