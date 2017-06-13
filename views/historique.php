@@ -2,7 +2,7 @@
  if (isset($_SESSION['connecte'])){
 ?>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="<?= baseUrl(); ?>css/style.css">
 
     <body id="top">
         <div class="container">
