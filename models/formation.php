@@ -65,7 +65,7 @@ if(isset($_GET['id_f'])){
 function getFormation()
 {
     $bdd = $GLOBALS['bdd'];
-    $sql = "SELECT * FROM formation f WHERE NOT EXISTS (SELECT * FROM formation_suivi fs WHERE f.id_f = fs.id_f AND fs.id_s like '".$_SESSION['id_s']."')";
+    $sql = "SELECT * FROM formation f, adresse a, prestataire p WHERE NOT EXISTS (SELECT * FROM formation_suivi fs WHERE f.id_f = fs.id_f AND fs.id_s like '".$_SESSION['id_s']."') AND f.id_a = a.id_a AND f.id_p = p.id_p";
     $req = $bdd->query($sql);
     
     if(!$req)
@@ -76,7 +76,7 @@ function getFormation()
     return $req;
 };
 
-function addFormation()
+/*function addFormation()
 {
     $bdd = $GLOBALS['bdd'];
     $sql1 = "INSERT INTO formation_suivi (id_f, id_s, valide) VALUES (:idformation, :idsalarie,0)";
@@ -92,4 +92,89 @@ function addFormation()
     
     return $req1;
 };
+*/
+
+function getNbJourFormation()
+{
+    $bdd = $GLOBALS['bdd'];
+    $sql = "SELECT duree FROM formation WHERE id_f = '".$id_f."'";
+    $req = $bdd->query($sql);
+    
+    if(!$req)
+    {
+        echo "requête defectueuse";
+    }
+    
+    while ($data = $requete->fetch())
+    {
+        return $dataNbJourFormation = $data['duree'];
+    }
+       
+}
+
+function getNbJourUser()
+{
+    $bdd = $GLOBALS['bdd'];
+    $sql = "SELECT nbr_jour FROM user WHERE id_s = '".$id_s."'";
+    $req = $bdd->query($sql);
+    
+    if(!$req)
+    {
+        echo "requête defectueuse";
+    }
+    
+    while ($data = $requete->fetch())
+    {
+        return $dataNbJourUser = $data['nbr_jour'];
+    }
+    
+}
+
+function getCoutFormation()
+{
+    $bdd = $GLOBALS['bdd'];
+    $sql ="SELECT cout FROM formation WHERE id_f = '".$id_f."'";
+    $req = $bdd->query($sql);
+    
+    if(!$req)
+    {
+        echo "requête defectueuse";
+    }
+    
+    while ($data = $requete->fetch())
+    {
+        return $dataCoutFormation = $data['cout'];
+    }
+    
+}
+
+function getCreditUser()
+{
+    $bdd = $GLOBALS['bdd'];
+    $sql = "SELECT credit FROM user WHERE id_s = '".$id_s."'";
+    $req = $bdd->query($sql);
+    
+    if(!$req)
+    {
+        echo "requête defectueuse";
+    }
+    
+    while ($data = $requete->fetch())
+    {
+        return $dataCreditUser = $data['NbJour'];
+    }
+}
+
+function getInfoFormation($id_f)
+{
+    $bdd = $GLOBALS['bdd'];
+    $sql = "SELECT * FROM formation WHERE id_f = '".$id_f."'";
+}
+
+function usenbjourcredits($nbjourformation,$creditsformation,$id_s)
+{
+    $bdd = $GLOBALS['bdd'];
+    $sql =("UPDATE salarie SET NbJour = NbJour - '$NbJourFormation', credits = credits - '$CoutFormation' WHERE id_s = '".$id_f."'");
+    $req = $bdd->query($sql);
+}
 ?>
