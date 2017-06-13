@@ -72,7 +72,7 @@ if ($_SESSION['chef'] == 1){
               <td style="text-align: center;" scope="row"><?php echo  $donnee['duree'] ?> jours</td>
               <td style="text-align: center;" scope="row">
               <form id="form_update1" method="post">
-                  <input type="submit" class="btn btn-danger annulation" value= "Annuler" data-id="<?= $donnee['id_f']?>" data_user="<?= $donnee['id_s']?>">
+                  <input type="submit" class="btn btn-danger annulation" value = "Annuler" data-id="<?= $donnee['id_f'] ?>" data-user="<?= $donnee['id_s'] ?>">
               </form>
               </td>
 
