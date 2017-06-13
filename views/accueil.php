@@ -1,7 +1,7 @@
 <?php
  if (isset($_SESSION['connecte'])){
 ?>
-<link rel="stylesheet" href="css/style.css">    
+<link rel="stylesheet" href="<?= baseUrl(); ?>css/style.css">    
     <body id="top">
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
           <script>
@@ -30,6 +30,20 @@
                           id_formation: this.dataset.id,
                           id_user: this.dataset.user,
                           value: this.value == 'Refuser',
+                      }
+                  });
+              });
+              });
+              
+              $(document).ready(function(){
+              $(".annulation").click(function(){
+                  $.ajax({
+                      type:"POST",
+                      url: "http://localhost/M2L/projetbts/annulation",
+                      data: {
+                          id_formation: this.dataset.id,
+                          id_user: this.dataset.user,
+                          value: this.value == 'Annuler',
                       }
                   });
               });
